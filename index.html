@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Sorting Visualizer</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+
+    <div id="container"></div>
+
+    <div id="controls">
+        <button onclick="startBubbleSort()">Bubble Sort</button>
+        <button onclick="startMergeSort()">Merge Sort</button>
+        <button onclick="startQuickSort()">Quick Sort</button>
+        <button onclick="startInsertionSort()">Insertion Sort</button>
+        <button onclick="reset()">Reset</button>
+    </div>
+
+    <div id="arraySizeSliderContainer">
+        <label for="arraySizeSlider">Array Size:</label>
+        <input type="range" id="arraySizeSlider" min="50" max="200" step="50" value="50" oninput="updateArraySize()">
+        <span id="arraySizeIndicator">50</span>
+    </div>
+
+
+    <div id="sortingSpeedSliderContainer">
+        <label for="sortingSpeedSlider">Sorting Speed:</label>
+        <input type="range" id="sortingSpeedSlider" min="0" max="100" step="10" value="50"
+            oninput="updateSortingSpeed()">
+        <span id="sortingSpeedIndicator">50</span>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="bubblesort.js"></script>
+    <script src="insertionsort.js"></script>
+    <script src="quicksort.js"></script>
+    <script src="mergesort.js"></script>
+
+    <div class="explanations">
+        <div class="explanation">
+            <h3>Bubble Sort</h3>
+            <p>Time Complexity: O(n^2)</p>
+            <p>Best Case: O(n)</p>
+            <p>Worst Case: O(n^2)</p>
+            <p>Bubble sort repeatedly compares adjacent elements and swaps them if they are in the wrong
+                order. It continues this process until the array is sorted.</p>
+        </div>
+        <div class="explanation">
+            <h3>Merge Sort</h3>
+            <p>Time Complexity: O(n log n)</p>
+            <p>Best Case: O(n log n)</p>
+            <p>Worst Case: O(n log n)</p>
+            <p>Merge sort is a divide-and-conquer algorithm that divides the array into two halves, sorts
+                them separately, and then merges the sorted halves back together.</p>
+        </div>
+
+        <div class="explanation">
+            <h3>Quick Sort</h3>
+            <p>Time Complexity: O(n log n)</p>
+            <p>Best Case: O(n log n)</p>
+            <p>Worst Case: O(n^2)</p>
+            <p>Quick sort is a divide-and-conquer algorithm that selects a pivot element and partitions the
+                array around the pivot. It then recursively sorts the sub-arrays.</p>
+        </div>
+
+        <div class="explanation">
+            <h3>Insertion Sort</h3>
+            <p>Time Complexity: O(n^2)</p>
+            <p>Best Case: O(n)</p>
+            <p>Worst Case: O(n^2)</p>
+            <p>Insertion sort builds the final sorted array one item at a time. It takes each element and
+                inserts it into its correct position within the sorted portion of the array.</p>
+        </div>
+
+</body>
+
+</html>
